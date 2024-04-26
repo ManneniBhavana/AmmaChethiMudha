@@ -1,6 +1,6 @@
 
 import './App.css';
-import Header from '../src/dashboard/header/HeaderPage';
+import Header from './Dashboard/header/HeaderPage';
 
 function App() {
   return (
