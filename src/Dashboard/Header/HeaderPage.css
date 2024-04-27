@@ -1,20 +1,21 @@
 /* Header.css */
 .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 40px;
-    margin-right: 20px;
-  }
-  
-  .app-name {
-    flex-grow: 1;
-  }
-  
-  .nav-links button {
-    margin-left: 10px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.app-name {
+  flex-grow: 1;
+}
+
+.nav-links-button {
+  margin-left: 10px;
+  text-decoration: 'none';
+  color:'white'
+}
