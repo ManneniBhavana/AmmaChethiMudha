@@ -1,21 +1,16 @@
 import React from "react";
+import Typography from "@mui/material/Typography";
+import "./FooterPage.css";
 
 const Footer = () => {
   return (
-    <footer
-      style={{
-        textAlign: "center",
-        backgroundColor: "#c25700",
-        color: "white",
-        marginTop: "50px",
-        padding: "20px 0",
-      }}
-    >
-      <p style={{ margin: 0 }}>
+    <footer className="footer">
+      <Typography variant="body1">
         &copy;{new Date().getFullYear()} Amma Chethi Mudha
-      </p>
+      </Typography>
     </footer>
   );
 };
 
 export default Footer;
+
