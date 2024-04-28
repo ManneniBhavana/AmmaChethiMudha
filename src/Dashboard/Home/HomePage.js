@@ -1,6 +1,10 @@
-// Home.js
 import React from "react";
+import CustomCard from '../ReusableCard';
 import "./HomePage.css"
+import Desserts from "../../images/desserts.jpeg"
+import Soups from "../../images/soups.jpg";
+import MainCourse from '../../images/maincourse.jpg'
+import PulaosandBiryani from '../../images/pulaosandBiryani.jpg'
 
 const Home = () => {
   return (
@@ -12,6 +16,30 @@ const Home = () => {
         and kitchen wisdom into the app. Learners can find the recipes and start their cooking journey with all the information provided. 
         Amma Chethi Mudha offers a library of recipes at your fingertips."
       </p>
+      <div className="card-container">
+        <CustomCard
+          title="Desserts"
+          content="A sweet library with lots of desserts recipes."
+          imageUrl={Desserts}
+        />
+        <CustomCard
+          title="Soups"
+          content="A library of quick saviours."
+          imageUrl={Soups}
+        />
+      </div>
+      <div  className="card-container">
+        <CustomCard
+          title="Main Course"
+          content="A library of mouth watering main course dishes."
+          imageUrl={MainCourse}
+        />
+        <CustomCard
+          title="Pulao's and Biryani's"
+          content="A bad day...! Open this library."
+          imageUrl={PulaosandBiryani}
+        />
+      </div>
     </div>
   );
 };

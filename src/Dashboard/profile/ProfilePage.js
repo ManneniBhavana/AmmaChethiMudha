@@ -1,27 +1,56 @@
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import React, { useState } from 'react';
+import { TextField, Button, Container, Typography } from '@mui/material';
+import './ProfilePage.css';
 
 const ProfilePage = () => {
+  // State variables for storing form data
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform form submission logic here
+    console.log('Submitted:', { firstName, lastName, email });
+  };
+
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Profile
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <div style={{ padding: 20 }}>
-        <Typography variant="h5" gutterBottom>
-          User Profile
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Here you can display the user's profile information.
-        </Typography>
-      </div>
-    </div>
+    <Container maxWidth="sm">
+      <form onSubmit={handleSubmit} className="profile-form">
+        <TextField
+          label="First Name"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          className="custom-textfield"
+        />
+        <TextField
+          label="Last Name"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          className="custom-textfield"
+        />
+        <TextField
+          label="Email"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="custom-textfield"
+        />
+        <Button type="submit" variant="contained" color="primary" className='custom-save-button'>
+          Edit
+        </Button>
+      </form>
+    </Container>
   );
 };
 

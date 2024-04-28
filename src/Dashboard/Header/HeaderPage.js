@@ -1,6 +1,5 @@
-// export default Header;
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -14,6 +13,12 @@ import { List, ListItem, Collapse, ListItemButton } from '@mui/material';
 import MenuIcon from '@material-ui/icons/Menu';
 import CircleIcon from '@mui/icons-material/Circle';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
+import homebackground from '../../images/home_background.jpeg';
+import insightsbackground from '../../images/insights_background.jpeg';
+import recipesbacground from '../../images/recipes_background.jpeg';
+import aboutusbackground from '../../images/about_us_background.jpeg';
+import profilebackground from '../../images/profile-background.jpg';
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -22,52 +27,47 @@ const Header = () => {
   const full = useMediaQuery('(min-width:600px)');
 
   const renderTitleAndBg = () => {
-    const obj = { bgImage: logo, title: 'AMMA CHETHI MUDDHA' };
+    let title = 'AMMA CHETHI MUDDHA';
+    let bgImage = backgroundImage;
+
     switch (location.pathname) {
       case '/home':
-        obj.title = 'AMMA CHETHI MUDDHA';
-        obj.bgImage = logo;
+        title = 'AMMA CHETHI MUDDHA'
+        bgImage = homebackground;
         break;
       case '/insights':
-        obj.title = 'INSIGHTS';
-        obj.bgImage = logo;
+        title = 'INSIGHTS'
+        bgImage = insightsbackground;
         break;
       case '/recipes':
-        obj.title = 'RECIPES';
-        obj.bgImage = logo;
+        title = 'RECIPES'
+        bgImage = recipesbacground;
         break;
       case '/aboutus':
-        obj.title = 'ABOUT US';
-        obj.bgImage = logo;
+        title = 'ABOUT US'
+        bgImage = aboutusbackground;
         break;
       case '/profile':
-        obj.title = 'PROFILE';
-        obj.bgImage = logo;
+        title = 'PROFILE'
+        bgImage = profilebackground;
         break;
       default:
         break;
     }
-    return obj;
+
+    return { title, bgImage };
   };
 
   const renderFullList = () => {
     const listItems = ['Home', 'Insights', 'Recipes', 'About Us', 'Profile'];
     return listItems.map((each) => {
       const activeStyle = {
-        color:
-          '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname
-            ? 'orange'
-            : 'white',
+        color: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'orange' : 'white',
       };
       return (
         <Link to={`${each.toLowerCase().replace(/\s/g, '')}`}>
-          <Button
-            className='nav-links-button'
-            style={{ textTransform: 'capitalize', ...activeStyle }}
-          >
-            <CircleIcon
-              style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }}
-            />
+          <Button className='nav-links-button' style={{ textTransform: 'capitalize', ...activeStyle }}>
+            <CircleIcon style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }} />
             {each}
           </Button>
         </Link>
@@ -82,18 +82,12 @@ const Header = () => {
       <>
         <List>
           <ListItem>
-            <Button onClick={() => setOpen(!open)}>
-              {open ? <CloseTwoToneIcon /> : <MenuIcon />}
-            </Button>
+            <Button onClick={() => setOpen(!open)}>{open ? <CloseTwoToneIcon /> : <MenuIcon />}</Button>
           </ListItem>
           <Collapse in={open} timeout='auto' unmountOnExit>
             {listItems.map((each) => {
               const activeStyle = {
-                color:
-                  '/' + each.toLowerCase().replace(/\s/g, '') ===
-                  location.pathname
-                    ? 'orange'
-                    : 'white',
+                color: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'orange' : 'white',
               };
 
               return (
@@ -104,13 +98,7 @@ const Header = () => {
                       style={{ textTransform: 'capitalize', ...activeStyle }}
                       onClick={() => setOpen(!open)}
                     >
-                      <CircleIcon
-                        style={{
-                          fontSize: '5px',
-                          marginRight: '5px',
-                          ...activeStyle,
-                        }}
-                      />
+                      <CircleIcon style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }} />
                       {each}
                     </ListItemButton>
                   </Link>
@@ -127,20 +115,14 @@ const Header = () => {
     <AppBar
       position='static'
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${renderTitleAndBg().bgImage})`,
         backgroundSize: 'cover',
         height: '310px',
         backgroundPosition: 'center center',
       }}
     >
       <Toolbar style={{ justifyContent: 'space-between' }}>
-        <div
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            display: 'flex',
-          }}
-        >
+        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
           {small && renderSmallList()}
           <div
             style={{
@@ -154,22 +136,11 @@ const Header = () => {
             }}
           >
             <Link to='/home'>
-              <img
-                src={renderTitleAndBg().bgImage}
-                height={40}
-                width={40}
-                alt='Logo'
-              />
+              <img src={logo} height={40} width={40} alt='Logo' />
             </Link>
           </div>
         </div>
-        <div
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            display: 'flex',
-          }}
-        >
+        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
           {full && <div>{renderFullList()}</div>}
           {/* Search Icon */}
           <IconButton color='white' aria-label='search'>
