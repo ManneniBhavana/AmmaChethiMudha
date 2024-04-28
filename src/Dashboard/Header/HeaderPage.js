@@ -63,6 +63,7 @@ const Header = () => {
     return listItems.map((each) => {
       const activeStyle = {
         color: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'orange' : 'white',
+        fontWeight: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'bold' : 'normal'
       };
       return (
         <Link to={`${each.toLowerCase().replace(/\s/g, '')}`}>

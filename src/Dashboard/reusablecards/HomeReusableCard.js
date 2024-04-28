@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
-import './ReusableCard.css'; // Import the CSS file
+import './HomeReusableCard.css'
 
 const CustomCard = ({ title, content, imageUrl }) => {
   return (

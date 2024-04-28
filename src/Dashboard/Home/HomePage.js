@@ -1,5 +1,5 @@
 import React from "react";
-import CustomCard from '../ReusableCard';
+import CustomCard from '../reusablecards/HomeReusableCard';
 import "./HomePage.css"
 import Desserts from "../../images/desserts.jpeg"
 import Soups from "../../images/soups.jpg";
