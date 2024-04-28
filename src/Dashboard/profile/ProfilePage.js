@@ -49,6 +49,9 @@ const ProfilePage = () => {
         <Button type="submit" variant="contained" color="primary" className='custom-save-button'>
           Edit
         </Button>
+        <Button type="submit" variant="contained" color="primary" className='custom-save-button'>
+          Saved Recipes
+        </Button>
       </form>
     </Container>
   );
