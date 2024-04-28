@@ -1,0 +1,31 @@
+.custom-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 260px;
+    width: 560px;
+  }
+  
+  .custom-card-media {
+    height: 236px;
+    width: 236px;
+    padding: 10px;
+    border-radius: 6%;
+  }
+  
+  .custom-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .custom-card-title {
+    text-align: left;
+    font-weight: bold;
+    color: #c25700;
+  }
+  
+  .custom-card-content-body {
+    text-align: left;
+  }
+  

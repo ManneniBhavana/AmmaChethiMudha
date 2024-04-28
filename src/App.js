@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './Dashboard/header/HeaderPage';
+import Header from './Dashboard/Header/HeaderPage';
 import Home from './Dashboard/home/HomePage';
 import Insights from './Dashboard/insights/InsightsPage';
 import Recipes from './Dashboard/recipes/RecipePage';
@@ -15,7 +15,7 @@ const App = () => {
       <div className='content'>
         <Header />
         <Routes>
-          <Route path='/home' comp={<Home />} />
+          <Route path='/home' element ={<Home />} />
           <Route path='/insights' element={<Insights />} />
           <Route path='/recipes' element={<Recipes />} />
           <Route path='/aboutus' element={<AboutUs />} />
