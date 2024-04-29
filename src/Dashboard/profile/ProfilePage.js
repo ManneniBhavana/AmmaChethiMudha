@@ -15,42 +15,66 @@ const ProfilePage = () => {
     console.log('Submitted:', { firstName, lastName, email });
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.location.replace('/login');
+  };
+
   return (
-    <Container maxWidth="sm">
-      <form onSubmit={handleSubmit} className="profile-form">
+    <Container maxWidth='sm'>
+      <form onSubmit={handleSubmit} className='profile-form'>
         <TextField
-          label="First Name"
-          variant="outlined"
+          label='First Name'
+          variant='outlined'
           fullWidth
-          margin="normal"
+          margin='normal'
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          className="custom-textfield"
+          className='custom-textfield'
         />
         <TextField
-          label="Last Name"
-          variant="outlined"
+          label='Last Name'
+          variant='outlined'
           fullWidth
-          margin="normal"
+          margin='normal'
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          className="custom-textfield"
+          className='custom-textfield'
         />
         <TextField
-          label="Email"
-          variant="outlined"
+          label='Email'
+          variant='outlined'
           fullWidth
-          margin="normal"
-          type="email"
+          margin='normal'
+          type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="custom-textfield"
+          className='custom-textfield'
         />
-        <Button type="submit" variant="contained" color="primary" className='custom-save-button'>
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          className='custom-save-button'
+        >
           Edit
         </Button>
-        <Button type="submit" variant="contained" color="primary" className='custom-save-button'>
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          className='custom-save-button'
+        >
           Saved Recipes
+        </Button>
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          className='custom-save-button'
+          onClick={handleLogout}
+        >
+          Log Out
         </Button>
       </form>
     </Container>
