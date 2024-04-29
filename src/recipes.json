@@ -1,0 +1,56 @@
+[
+    {
+      "id": "gulab-jamun",
+      "name": "Gulab Jamun",
+      "cookingTime": {
+        "cookTime": "60 Mins",
+        "restingTime": "30 Mins",
+        "servings": "6"
+      },
+      "ingredients": [
+        "1 cup milk powder",
+        "1/4 cup all-purpose flour",
+        "1/4 tsp baking soda",
+        "2 tbsp ghee",
+        "1/2 cup milk",
+        "2 cups sugar",
+        "1 cup water",
+        "1/2 tsp cardamom powder",
+        "Saffron strands (optional)"
+      ],
+      "instructions": [
+        "In a mixing bowl, combine milk powder, all-purpose flour, and baking soda.",
+        "Add ghee and mix well.",
+        "Slowly add milk to form a soft dough.",
+        "Shape the dough into small balls."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "mango-mojito",
+      "name": "Mango Mojito",
+      "cookingTime": {
+        "cookTime": "10 Mins",
+        "restingTime": "0 Mins",
+        "servings": "1"
+      },
+      "ingredients": [
+        "1 ripe mango",
+        "6-8 mint leaves",
+        "1 lime",
+        "2 tbsp sugar",
+        "1 cup club soda",
+        "Ice cubes"
+      ],
+      "instructions": [
+        "Peel and chop the mango.",
+        "Muddle the mint leaves and lime wedges in a glass.",
+        "Add the chopped mango and sugar to the glass.",
+        "Muddle everything together until well combined."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    }
+  ]
+  

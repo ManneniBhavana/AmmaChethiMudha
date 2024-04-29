@@ -13,7 +13,12 @@ export default function RecipePage() {
       items: [
         {
           title: '',
-          subItem: ['Gulab Jamun', 'Paayasam', 'Bobbatlu', 'Double Ka Meetha'],
+          subItem: [
+          'Gulab Jamun', 
+          'Paayasam', 
+          'Bobbatlu', 
+          'Double Ka Meetha'
+        ],
         },
       ],
     },
@@ -103,10 +108,17 @@ export default function RecipePage() {
     },
   ];
 
+
+  const handleRecipeClick = (recipeName) => {
+    // Redirect to RecipeDetails page for the clicked recipe
+    console.log(`Redirecting to RecipeDetails for: ${recipeName}`);
+    // Replace the console.log with the redirection logic
+  };
+
   const renderAccordion = () => {
     return recipes.map((each, idx) => {
       return (
-        <Accordion>
+        <Accordion key={idx}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`panel${idx}content`}
@@ -127,16 +139,20 @@ export default function RecipePage() {
                   {subItems.title ? (
                     <h4 style={{ color: '#c25700' }}>{subItems.title} : </h4>
                   ) : null}
-                  {subItems.subItem.map((a) => (
-                    <Link to={`${a.toLowerCase().replace(/\s/g, '')}`}>
+                  {subItems.subItem.map((title, index) => (
+                    <Link
+                      key={index}
+                      to={`/recipedetails/${title.toLowerCase().replace(/\s+/g, '-')}`}
+                      style={{ textDecoration: 'none' }}
+                    >
                       <Button
+                        onClick={() => handleRecipeClick(title)}
                         style={{
                           textTransform: 'capitalize',
-                          textDecoration: 'underline',
                           color: 'black',
                         }}
                       >
-                        {a}
+                        {title}
                       </Button>
                     </Link>
                   ))}
