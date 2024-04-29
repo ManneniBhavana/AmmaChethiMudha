@@ -22,6 +22,8 @@ import profilebackground from '../../images/profile-background.jpg';
 const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const hideHeader =
+    location.pathname === '/login' || location.pathname === '/signup';
 
   const small = useMediaQuery('(max-width:600px)');
   const full = useMediaQuery('(min-width:600px)');
@@ -32,23 +34,23 @@ const Header = () => {
 
     switch (location.pathname) {
       case '/home':
-        title = 'AMMA CHETHI MUDDHA'
+        title = 'AMMA CHETHI MUDDHA';
         bgImage = homebackground;
         break;
       case '/insights':
-        title = 'INSIGHTS'
+        title = 'INSIGHTS';
         bgImage = insightsbackground;
         break;
       case '/recipes':
-        title = 'RECIPES'
+        title = 'RECIPES';
         bgImage = recipesbacground;
         break;
       case '/aboutus':
-        title = 'ABOUT US'
+        title = 'ABOUT US';
         bgImage = aboutusbackground;
         break;
       case '/profile':
-        title = 'PROFILE'
+        title = 'PROFILE';
         bgImage = profilebackground;
         break;
       default:
@@ -62,13 +64,24 @@ const Header = () => {
     const listItems = ['Home', 'Insights', 'Recipes', 'About Us', 'Profile'];
     return listItems.map((each) => {
       const activeStyle = {
-        color: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'orange' : 'white',
-        fontWeight: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'bold' : 'normal'
+        color:
+          '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname
+            ? 'orange'
+            : 'white',
+        fontWeight:
+          '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname
+            ? 'bold'
+            : 'normal',
       };
       return (
         <Link to={`${each.toLowerCase().replace(/\s/g, '')}`}>
-          <Button className='nav-links-button' style={{ textTransform: 'capitalize', ...activeStyle }}>
-            <CircleIcon style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }} />
+          <Button
+            className='nav-links-button'
+            style={{ textTransform: 'capitalize', ...activeStyle }}
+          >
+            <CircleIcon
+              style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }}
+            />
             {each}
           </Button>
         </Link>
@@ -83,12 +96,18 @@ const Header = () => {
       <>
         <List>
           <ListItem>
-            <Button onClick={() => setOpen(!open)}>{open ? <CloseTwoToneIcon /> : <MenuIcon />}</Button>
+            <Button onClick={() => setOpen(!open)}>
+              {open ? <CloseTwoToneIcon /> : <MenuIcon />}
+            </Button>
           </ListItem>
           <Collapse in={open} timeout='auto' unmountOnExit>
             {listItems.map((each) => {
               const activeStyle = {
-                color: '/' + each.toLowerCase().replace(/\s/g, '') === location.pathname ? 'orange' : 'white',
+                color:
+                  '/' + each.toLowerCase().replace(/\s/g, '') ===
+                  location.pathname
+                    ? 'orange'
+                    : 'white',
               };
 
               return (
@@ -99,7 +118,13 @@ const Header = () => {
                       style={{ textTransform: 'capitalize', ...activeStyle }}
                       onClick={() => setOpen(!open)}
                     >
-                      <CircleIcon style={{ fontSize: '5px', marginRight: '5px', ...activeStyle }} />
+                      <CircleIcon
+                        style={{
+                          fontSize: '5px',
+                          marginRight: '5px',
+                          ...activeStyle,
+                        }}
+                      />
                       {each}
                     </ListItemButton>
                   </Link>
@@ -120,10 +145,17 @@ const Header = () => {
         backgroundSize: 'cover',
         height: '310px',
         backgroundPosition: 'center center',
+        display: hideHeader ? 'none' : 'flex',
       }}
     >
       <Toolbar style={{ justifyContent: 'space-between' }}>
-        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
+        <div
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            display: 'flex',
+          }}
+        >
           {small && renderSmallList()}
           <div
             style={{
@@ -141,7 +173,13 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
+        <div
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            display: 'flex',
+          }}
+        >
           {full && <div>{renderFullList()}</div>}
           {/* Search Icon */}
           <IconButton color='white' aria-label='search'>
