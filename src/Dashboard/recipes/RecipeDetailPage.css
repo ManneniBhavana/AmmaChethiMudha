@@ -1,0 +1,14 @@
+.headings {
+    font-size: 28px;
+    font-weight: 700 !important;
+    color: #c25700 !important;
+    padding-top: 10px;
+  }
+  
+  .textView {
+    font-size: 22px !important;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  

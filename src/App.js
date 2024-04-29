@@ -35,7 +35,7 @@ const App = () => {
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/recipedetail/:recipeId' element={<RecipeDetail />} />
+            <Route path='/recipedetails/:recipeId' element={<RecipeDetail />} />
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />

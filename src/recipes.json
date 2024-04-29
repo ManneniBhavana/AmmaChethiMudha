@@ -25,7 +25,10 @@
         "Shape the dough into small balls."
       ],
       "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
-      "ratings": []
+      "ratings": {
+        "userRating": null,
+        "comments": ""
+      }
     },
     {
       "id": "mango-mojito",
@@ -50,7 +53,10 @@
         "Muddle everything together until well combined."
       ],
       "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
-      "ratings": []
+      "ratings": {
+        "userRating": null,
+        "comments": ""
+      }
     }
   ]
   
