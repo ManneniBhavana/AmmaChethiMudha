@@ -18,6 +18,10 @@ import insightsbackground from '../../images/insights_background.jpeg';
 import recipesbacground from '../../images/recipes_background.jpeg';
 import aboutusbackground from '../../images/about_us_background.jpeg';
 import profilebackground from '../../images/profile-background.jpg';
+import dessertsmenubackground from '../../images/dessertsmenubackground.jpeg'
+import soupsmenubackground from '../../images/soupsmenubackground.jpeg'
+import maincoursemenubackground from '../../images/maincoursemenubackground.jpeg'
+import pulaosandbiryanismenubackground from '../../images/pulaosandbiryanismenubackground.jpeg'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -29,12 +33,12 @@ const Header = () => {
   const full = useMediaQuery('(min-width:600px)');
 
   const renderTitleAndBg = () => {
-    let title = 'AMMA CHETHI MUDDHA';
+    let title = 'AMMA CHETHI MUDHA';
     let bgImage = backgroundImage;
 
     switch (location.pathname) {
       case '/home':
-        title = 'AMMA CHETHI MUDDHA';
+        title = 'AMMA CHETHI MUDHA';
         bgImage = homebackground;
         break;
       case '/insights':
@@ -52,6 +56,22 @@ const Header = () => {
       case '/profile':
         title = 'PROFILE';
         bgImage = profilebackground;
+        break;
+      case '/dessertsmenu':
+        title = 'DESSERTS';
+        bgImage = dessertsmenubackground;
+        break;
+      case '/soupsmenu':
+        title = 'SOUPS';
+        bgImage = soupsmenubackground;
+        break;
+      case '/maincoursemenu':
+        title = 'MAIN COURSE';
+        bgImage = maincoursemenubackground;
+        break;
+      case '/pulaosandbiryanismenu':
+        title = 'PULAOS AND BIRYANIS';
+        bgImage = pulaosandbiryanismenubackground;
         break;
       default:
         break;

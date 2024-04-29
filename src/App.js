@@ -19,6 +19,10 @@ import { ToastContainer } from 'react-toastify';
 import ProtectedRoute from './ProtectedRoute';
 import EmptyComponent from './Dashboard/emptyComponent/EmptyComponent';
 import RecipeDetail from './Dashboard/recipes/RecipeDetailPage';
+import DessertsPage from './Dashboard/homemenus/dessertsmenu';
+import PulaosandbiryanisPage from './Dashboard/homemenus/pulaosandbiryanismenu';
+import SoupsPage from './Dashboard/homemenus/soupsmenu';
+import MainCoursePage from './Dashboard/homemenus/maincoursemenu';
 
 const App = () => {
   return (
@@ -36,6 +40,10 @@ const App = () => {
             <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/recipedetail/:recipeId' element={<RecipeDetail />} />
+            <Route path='/dessertsmenu' element={<DessertsPage />} />
+            <Route path='/soupsmenu' element={<SoupsPage />} />
+            <Route path='/maincoursemenu' element={<MainCoursePage />} />
+            <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />
