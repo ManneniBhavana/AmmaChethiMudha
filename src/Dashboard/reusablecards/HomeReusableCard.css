@@ -1,9 +1,15 @@
-.custom-card {
+  .custom-card {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     height: 260px;
     width: 560px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.04);
   }
   
   .custom-card-media {

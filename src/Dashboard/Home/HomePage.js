@@ -1,12 +1,15 @@
 import React from "react";
 import CustomCard from '../reusablecards/HomeReusableCard';
-import "./HomePage.css"
-import Desserts from "../../images/desserts.jpeg"
+import "./HomePage.css";
+import Desserts from "../../images/desserts.jpeg";
 import Soups from "../../images/soups.jpg";
-import MainCourse from '../../images/maincourse.jpg'
-import PulaosandBiryani from '../../images/pulaosandBiryani.jpg'
+import MainCourse from '../../images/maincourse.jpg';
+import PulaosandBiryani from '../../images/pulaosandBiryani.jpg';
 
 const Home = () => {
+  const handleCardClick = (link) => {
+    window.location.href = link;
+  };
   return (
     <div className="home-container">
       <h1 className="description">Description</h1>
@@ -21,23 +24,27 @@ const Home = () => {
           title="Desserts"
           content="A sweet library with lots of desserts recipes."
           imageUrl={Desserts}
+          onClick={() => handleCardClick("/dessertsmenu")}
         />
         <CustomCard
           title="Soups"
           content="A library of quick saviours."
           imageUrl={Soups}
+          onClick={() => handleCardClick("/soupsmenu")}
         />
       </div>
-      <div  className="card-container">
+      <div className="card-container">
         <CustomCard
           title="Main Course"
           content="A library of mouth watering main course dishes."
           imageUrl={MainCourse}
+          onClick={() => handleCardClick("/maincoursemenu")}
         />
         <CustomCard
           title="Pulao's and Biryani's"
           content="A bad day...! Open this library."
           imageUrl={PulaosandBiryani}
+          onClick={() => handleCardClick("/pulaoandbiryani")} 
         />
       </div>
     </div>
