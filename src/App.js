@@ -18,6 +18,7 @@ import Login from './login/LoginPage';
 import { ToastContainer } from 'react-toastify';
 import ProtectedRoute from './ProtectedRoute';
 import EmptyComponent from './Dashboard/emptyComponent/EmptyComponent';
+import RecipeDetail from './Dashboard/recipes/RecipeDetailPage';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/recipedetail/:recipeId' element={<RecipeDetail />} />
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />
