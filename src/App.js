@@ -44,6 +44,7 @@ const App = () => {
             <Route path='/soupsmenu' element={<SoupsPage />} />
             <Route path='/maincoursemenu' element={<MainCoursePage />} />
             <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
+            <Route path='/recipedetails/:recipeId' element={<RecipeDetail />} />
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />
