@@ -23,6 +23,7 @@ import DessertsPage from './Dashboard/homemenus/dessertsmenu';
 import PulaosandbiryanisPage from './Dashboard/homemenus/pulaosandbiryanismenu';
 import SoupsPage from './Dashboard/homemenus/soupsmenu';
 import MainCoursePage from './Dashboard/homemenus/maincoursemenu';
+import SearchResultsPage from './Dashboard/searchresults/SearchResults';
 
 const App = () => {
   return (
@@ -39,12 +40,15 @@ const App = () => {
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/aboutus' element={<AboutUs />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/recipedetail/:recipeId' element={<RecipeDetail />} />
+            <Route path='/recipedetails/:recipeId' element={<RecipeDetail />} />
             <Route path='/dessertsmenu' element={<DessertsPage />} />
             <Route path='/soupsmenu' element={<SoupsPage />} />
             <Route path='/maincoursemenu' element={<MainCoursePage />} />
-            <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
-            <Route path='/recipedetails/:recipeId' element={<RecipeDetail />} />
+            <Route
+              path='/pulaosandbiryanismenu'
+              element={<PulaosandbiryanisPage />}
+            />
+            <Route path='/search' element={<SearchResultsPage />} />
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />
