@@ -25,6 +25,268 @@
         "Shape the dough into small balls."
       ],
       "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": {
+        "userRating": null,
+        "comments": ""
+      }
+    },
+    {
+      "id": "paayasam",
+      "name": "Paayasam",
+      "cookingTime": {
+        "cookTime": "45 Mins",
+        "restingTime": "15 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "1/2 cup rice",
+        "4 cups milk",
+        "1/2 cup sugar",
+        "2 tbsp ghee",
+        "10-12 cashew nuts",
+        "10-12 raisins",
+        "1/4 tsp cardamom powder",
+        "A pinch of saffron strands"
+      ],
+      "instructions": [
+        "Wash the rice and soak it in water for 15 minutes.",
+        "In a heavy-bottomed pan, bring the milk to a boil.",
+        "Drain the soaked rice and add it to the boiling milk. Cook on low heat until the rice is fully cooked and the milk thickens, stirring occasionally.",
+        "Add sugar and continue cooking until the sugar is dissolved and the mixture thickens further.",
+        "In a separate pan, heat ghee and fry the cashew nuts and raisins until golden brown. Add them to the paayasam.",
+        "Add cardamom powder and saffron strands. Mix well.",
+        "Remove from heat and let it rest for 15 minutes before serving."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "bobbatlu",
+      "name": "Bobbatlu",
+      "cookingTime": {
+        "cookTime": "60 Mins",
+        "restingTime": "30 Mins",
+        "servings": "8"
+      },
+      "ingredients": [
+        "1 cup chana dal",
+        "1 cup jaggery",
+        "1 cup all-purpose flour",
+        "1/4 tsp turmeric powder",
+        "1/4 tsp cardamom powder",
+        "A pinch of salt",
+        "Ghee for frying"
+      ],
+      "instructions": [
+        "Soak chana dal in water for 2 hours. Drain the water.",
+        "Pressure cook chana dal with enough water until soft. Drain excess water.",
+        "Add jaggery to a pan with a little water and heat until it melts. Add cooked chana dal, cardamom powder, and mix well. Cook until the mixture thickens. Let it cool.",
+        "In a bowl, mix all-purpose flour, turmeric powder, salt, and water to make a smooth dough.",
+        "Divide the dough into small balls. Roll out each ball into a small circle. Place a spoonful of the chana dal mixture in the center and seal the edges to form a ball.",
+        "Flatten the ball gently and roll it out into a circle.",
+        "Heat a griddle and cook the bobbatlu on both sides using ghee until golden brown.",
+        "Serve hot or warm."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "double-ka-meetha",
+      "name": "Double Ka Meetha",
+      "cookingTime": {
+        "cookTime": "30 Mins",
+        "restingTime": "15 Mins",
+        "servings": "6"
+      },
+      "ingredients": [
+        "6 slices of bread",
+        "1 cup milk",
+        "1/2 cup sugar",
+        "2 tbsp ghee",
+        "1/4 tsp cardamom powder",
+        "10-12 cashew nuts",
+        "10-12 almonds",
+        "10-12 raisins",
+        "Saffron strands (optional)"
+      ],
+      "instructions": [
+        "Trim the edges of the bread slices and cut them into halves diagonally.",
+        "Heat ghee in a pan and fry the bread slices until golden brown. Set aside.",
+        "In the same pan, add milk and bring it to a boil. Add sugar, cardamom powder, and saffron strands. Mix well and cook until the sugar dissolves.",
+        "Place the fried bread slices in the milk mixture and let them soak for a few minutes.",
+        "Garnish with fried cashew nuts, almonds, and raisins.",
+        "Let it cool for 15 minutes before serving."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },    
+    {
+      "id": "vegetable-soup",
+      "name": "Vegetable Soup",
+      "cookingTime": {
+        "cookTime": "30 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "2 carrots, diced",
+        "2 stalks celery, diced",
+        "1 onion, diced",
+        "2 cloves garlic, minced",
+        "1 potato, diced",
+        "1 cup green beans, chopped",
+        "1 cup corn kernels",
+        "6 cups vegetable broth",
+        "1 can (14 oz) diced tomatoes",
+        "2 tsp dried basil",
+        "1 tsp dried oregano",
+        "Salt and pepper to taste",
+        "2 tbsp olive oil"
+      ],
+      "instructions": [
+        "Heat olive oil in a large pot over medium heat. Add onions and garlic, and sauté until softened.",
+        "Add carrots, celery, potato, green beans, and corn. Cook for about 5 minutes, stirring occasionally.",
+        "Pour in vegetable broth and diced tomatoes. Season with dried basil, dried oregano, salt, and pepper. Bring to a boil.",
+        "Reduce heat to low, cover, and simmer for about 20 minutes or until vegetables are tender.",
+        "Taste and adjust seasoning if needed. Serve hot."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "tomato-soup",
+      "name": "Tomato Soup",
+      "cookingTime": {
+        "cookTime": "30 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "1 kg tomatoes, chopped",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "2 tbsp olive oil",
+        "4 cups vegetable broth",
+        "1/4 cup fresh basil leaves",
+        "Salt and pepper to taste",
+        "1/2 cup heavy cream (optional)"
+      ],
+      "instructions": [
+        "Heat olive oil in a large pot over medium heat. Add onions and garlic, and sauté until softened.",
+        "Add chopped tomatoes and cook until they start to break down, about 10 minutes.",
+        "Pour in vegetable broth and bring to a boil. Reduce heat to low and simmer for about 15 minutes.",
+        "Using an immersion blender, blend the soup until smooth. Alternatively, let the soup cool slightly and blend it in batches in a blender.",
+        "Season with salt and pepper to taste. Stir in fresh basil leaves.",
+        "If using heavy cream, stir it in until well combined. Cook for an additional 5 minutes, then remove from heat.",
+        "Serve hot, garnished with additional fresh basil leaves if desired."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "corn-soup",
+      "name": "Corn Soup",
+      "cookingTime": {
+        "cookTime": "25 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "2 cups corn kernels",
+        "1 onion, finely chopped",
+        "2 cloves garlic, minced",
+        "2 cups vegetable broth",
+        "1 cup milk",
+        "2 tbsp butter",
+        "2 tbsp all-purpose flour",
+        "Salt and pepper to taste",
+        "Chopped fresh parsley for garnish"
+      ],
+      "instructions": [
+        "In a large pot, melt butter over medium heat. Add chopped onion and minced garlic, and sauté until softened.",
+        "Add all-purpose flour and cook for 2 minutes, stirring constantly.",
+        "Gradually add vegetable broth while stirring to avoid lumps. Bring to a boil.",
+        "Reduce heat to low and add corn kernels. Simmer for 10-15 minutes until corn is tender.",
+        "Using an immersion blender, blend the soup until smooth. Alternatively, let the soup cool slightly and blend it in batches in a blender.",
+        "Stir in milk and season with salt and pepper to taste. Cook for an additional 5 minutes.",
+        "Serve hot, garnished with chopped fresh parsley."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "indian-spiced-lentil-soup",
+      "name": "Indian Spiced Lentil Soup",
+      "cookingTime": {
+        "cookTime": "45 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "1 cup red lentils, rinsed",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1-inch piece of ginger, grated",
+        "1 carrot, diced",
+        "1 potato, diced",
+        "1 tomato, chopped",
+        "1 tsp ground cumin",
+        "1 tsp ground coriander",
+        "1/2 tsp turmeric powder",
+        "1/2 tsp garam masala",
+        "1/4 tsp cayenne pepper (optional, for heat)",
+        "4 cups vegetable broth",
+        "1 tbsp vegetable oil",
+        "Salt and pepper to taste",
+        "Fresh cilantro for garnish"
+      ],
+      "instructions": [
+        "Heat vegetable oil in a large pot over medium heat. Add chopped onion, minced garlic, and grated ginger. Sauté until onions are soft and translucent.",
+        "Add diced carrot and potato to the pot and cook for 5 minutes.",
+        "Stir in ground cumin, ground coriander, turmeric powder, garam masala, and cayenne pepper (if using). Cook for another 2 minutes, stirring constantly.",
+        "Add rinsed red lentils and chopped tomato to the pot. Pour in vegetable broth and bring to a boil.",
+        "Reduce heat to low, cover, and simmer for 25-30 minutes, or until lentils and vegetables are tender.",
+        "Season with salt and pepper to taste. Adjust seasoning if necessary.",
+        "Serve hot, garnished with fresh cilantro."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
+      "ratings": []
+    },
+    {
+      "id": "chicken-manchow-soup",
+      "name": "Chicken Manchow Soup",
+      "cookingTime": {
+        "cookTime": "30 Mins",
+        "servings": "4"
+      },
+      "ingredients": [
+        "200g boneless chicken, finely chopped",
+        "4 cups chicken broth",
+        "2 tbsp vegetable oil",
+        "1 onion, finely chopped",
+        "2 cloves garlic, minced",
+        "1-inch piece of ginger, grated",
+        "1 green chili, finely chopped",
+        "1 carrot, finely chopped",
+        "1/2 cup cabbage, finely chopped",
+        "1/4 cup bell peppers (red, green, and yellow), finely chopped",
+        "2 tbsp soy sauce",
+        "1 tbsp vinegar",
+        "1 tbsp chili sauce",
+        "1 tbsp tomato ketchup",
+        "1 tbsp cornstarch, dissolved in 2 tbsp water",
+        "2 eggs, beaten",
+        "Salt and pepper to taste",
+        "Fresh cilantro for garnish"
+      ],
+      "instructions": [
+        "Heat vegetable oil in a large pot over medium heat. Add finely chopped onion, minced garlic, grated ginger, and finely chopped green chili. Sauté until onions are soft and translucent.",
+        "Add finely chopped carrot, cabbage, and bell peppers to the pot. Cook for 3-4 minutes, stirring occasionally.",
+        "Stir in finely chopped boneless chicken and cook until chicken is no longer pink.",
+        "Pour in chicken broth and bring to a boil. Reduce heat to low and simmer for 10-15 minutes.",
+        "Add soy sauce, vinegar, chili sauce, and tomato ketchup to the pot. Mix well.",
+        "Slowly pour in beaten eggs while stirring the soup continuously to create egg strands.",
+        "Add the dissolved cornstarch mixture to the soup to thicken it. Cook for another 2-3 minutes, stirring constantly.",
+        "Season with salt and pepper to taste. Adjust seasoning if necessary.",
+        "Serve hot, garnished with fresh cilantro."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
       "ratings": []
     },
     {
@@ -363,7 +625,7 @@
       ],
       "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_HERE",
       "ratings": []
-    },
+    }
     
   ]
   
