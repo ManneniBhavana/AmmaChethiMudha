@@ -18,16 +18,20 @@ import insightsbackground from '../../images/insights_background.jpeg';
 import recipesbacground from '../../images/recipes_background.jpeg';
 import aboutusbackground from '../../images/about_us_background.jpeg';
 import profilebackground from '../../images/profile-background.jpg';
-import dessertsmenubackground from '../../images/dessertsmenubackground.jpeg'
-import soupsmenubackground from '../../images/soupsmenubackground.jpeg'
-import maincoursemenubackground from '../../images/maincoursemenubackground.jpeg'
-import pulaosandbiryanismenubackground from '../../images/pulaosandbiryanismenubackground.jpeg'
+import dessertsmenubackground from '../../images/dessertsmenubackground.jpeg';
+import soupsmenubackground from '../../images/soupsmenubackground.jpeg';
+import maincoursemenubackground from '../../images/maincoursemenubackground.jpeg';
+import pulaosandbiryanismenubackground from '../../images/pulaosandbiryanismenubackground.jpeg';
+import SearchComponent from './SearchComponent';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const location = useLocation();
   const hideHeader =
-    location.pathname === '/login' || location.pathname === '/signup';
+    location.pathname === '/login' ||
+    location.pathname === '/signup' ||
+    location.pathname === '/search';
 
   const small = useMediaQuery('(max-width:600px)');
   const full = useMediaQuery('(min-width:600px)');
@@ -168,45 +172,56 @@ const Header = () => {
         display: hideHeader ? 'none' : 'flex',
       }}
     >
-      <Toolbar style={{ justifyContent: 'space-between' }}>
-        <div
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            display: 'flex',
-          }}
-        >
-          {small && renderSmallList()}
+      {showSearch ? (
+        <SearchComponent setShowSearch={setShowSearch} />
+      ) : (
+        <Toolbar style={{ justifyContent: 'space-between' }}>
           <div
             style={{
-              paddingTop: 0.02,
-              paddingBottom: 0.02,
-              paddingLeft: 2,
-              paddingRight: 2,
-              color: 'black',
-              borderColor: 'white',
-              backgroundColor: 'white',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              display: 'flex',
             }}
           >
-            <Link to='/home'>
-              <img src={logo} height={40} width={40} alt='Logo' />
-            </Link>
+            {small && renderSmallList()}
+
+            <div
+              style={{
+                paddingTop: 0.02,
+                paddingBottom: 0.02,
+                paddingLeft: 2,
+                paddingRight: 2,
+                color: 'black',
+                borderColor: 'white',
+                backgroundColor: 'white',
+              }}
+            >
+              <Link to='/home'>
+                <img src={logo} height={40} width={40} alt='Logo' />
+              </Link>
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            display: 'flex',
-          }}
-        >
-          {full && <div>{renderFullList()}</div>}
-          {/* Search Icon */}
-          <IconButton color='white' aria-label='search'>
-            <AiOutlineSearch style={{ color: 'white', fontSize: 20 }} />
-          </IconButton>
-        </div>
-      </Toolbar>
+
+          <div
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              display: 'flex',
+            }}
+          >
+            {full && <div>{renderFullList()}</div>}
+            {/* Search Icon */}
+
+            <IconButton
+              color='white'
+              aria-label='search'
+              onClick={() => setShowSearch(true)}
+            >
+              <AiOutlineSearch style={{ color: 'white', fontSize: 20 }} />
+            </IconButton>
+          </div>
+        </Toolbar>
+      )}
       <Toolbar>
         <Typography
           variant='h6'
