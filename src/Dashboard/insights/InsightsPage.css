@@ -1,20 +1,23 @@
-  .container {
+  .containerinsights {
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     max-width: 1400px;
   }
   
-  .headings {
-    font-size: 28px;
+  .headingsinsights {
+    font-family:Arial, Helvetica, sans-serif !important;
+    font-size: 25px !important;
     font-weight: 700 !important;
     color: #c25700 !important;
     padding-top: 10px;
   }
   
-  .textView {
-    font-size: 22px !important;
+  .textViewinsights {
+    font-family:Arial, Helvetica, sans-serif !important;
+    font-size: 18px !important;
     color: black;
     padding-top: 16px;
     padding-bottom: 16px;
