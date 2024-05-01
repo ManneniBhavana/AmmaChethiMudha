@@ -165,7 +165,7 @@ const Header = () => {
     <AppBar
       position='static'
       style={{
-        backgroundImage: `url(${renderTitleAndBg().bgImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${renderTitleAndBg().bgImage})`,
         backgroundSize: 'cover',
         height: '310px',
         backgroundPosition: 'center center',

@@ -115,30 +115,24 @@ export default function RecipePage() {
     // Replace the console.log with the redirection logic
   };
 
-  const renderAccordion = () => {
-    return recipes.map((each, idx) => {
-      return (
-        <Accordion key={idx}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel${idx}content`}
-            id={`panel${idx}header`}
-            disableRipple={false}
-            disableTouchRipple={false}
-          >
-            <h3 style={{ color: '#c25700' }}>{each.title}</h3>
-          </AccordionSummary>
-          <AccordionDetails>
-            {each.items.map((subItems, id) => {
-              return (
-                <div
-                  component='div'
-                  key={id}
-                  style={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  {subItems.title ? (
-                    <h4 style={{ color: '#c25700' }}>{subItems.title} : </h4>
-                  ) : null}
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '50px'}}>
+      <div style={{ width: '60%' }}>
+        {recipes.map((each, idx) => (
+          <Accordion key={idx} style={{ marginBottom: '50px' }}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${idx}content`}
+              id={`panel${idx}header`}
+              disableRipple={false}
+              disableTouchRipple={false}
+            >
+              <h3 style={{ color: '#c25700', margin: 0 }}>{each.title}</h3>
+            </AccordionSummary>
+            <AccordionDetails style={{ display: 'flex', flexDirection: 'column' }}>
+              {each.items.map((subItems, id) => (
+                <div key={id} style={{ display: 'flex', flexDirection: 'column' }}>
+                  {subItems.title && <h4 style={{ color: '#c25700', margin: 0 }}>{subItems.title}</h4>}
                   {subItems.subItem.map((title, index) => (
                     <Link
                       key={index}
@@ -150,6 +144,7 @@ export default function RecipePage() {
                         style={{
                           textTransform: 'capitalize',
                           color: 'black',
+                          marginBottom: '5px',
                         }}
                       >
                         {title}
@@ -157,13 +152,11 @@ export default function RecipePage() {
                     </Link>
                   ))}
                 </div>
-              );
-            })}
-          </AccordionDetails>
-        </Accordion>
-      );
-    });
-  };
-
-  return <div>{renderAccordion()}</div>;
+              ))}
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </div>
+    </div>
+  );
 }
