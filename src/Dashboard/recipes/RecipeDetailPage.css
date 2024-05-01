@@ -1,13 +1,38 @@
 .headings {
-    font-size: 28px;
+    font-size: 16px !important;
     font-weight: 700 !important;
     color: #c25700 !important;
     padding-top: 10px;
   }
   
   .textView {
-    font-size: 22px !important;
+    font-size: 16px !important;
     color: black;
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+
+  .custom-save-button {
+    background-color: #c25700 !important;
+    color: white !important;
+    border-color: #c25700 !important;
+    height: 45px !important;
+    width: 160px !important;
+    margin-top: 30px !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+  }
+  .disabled-custom-save-button {
+    background-color: rgb(203, 203, 203) !important;
+    color: white !important;
+    border-color: grey !important;
+    height: 45px !important;
+    width: 160px !important;
+    margin-top: 30px !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+  }
+  
+  .custom-save-button:hover {
+    background-color: #c25700  !important;
   }

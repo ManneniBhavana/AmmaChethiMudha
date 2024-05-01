@@ -6,16 +6,18 @@ import {
   Grid,
   IconButton,
   InputAdornment,
+  Link
 } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import loginImage from '../images/home_background.jpeg';
+import backdropImage from '../images/loginSignupImage.jpeg';
+import signUpBackgroundImage from '../images/recipes_background.jpeg'
+
 const Signup = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -47,10 +49,8 @@ const Signup = () => {
     e.preventDefault();
     // Validate form data
     const errors = {};
-    if (!/^[a-zA-Z]+$/.test(formData.firstName)) {
-      errors.firstName = 'First name should contain only alphabets';
-    } else if (!/^[a-zA-Z]+$/.test(formData.lastName)) {
-      errors.lastName = 'Last name should contain only alphabets';
+    if (!/^[a-zA-Z]+$/.test(formData.fullName)) {
+      errors.fullName = 'First name should contain only alphabets';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = 'Invalid email address';
     } else if (formData.password.length < 8) {
@@ -63,8 +63,7 @@ const Signup = () => {
     } else {
       toast.success('User signed up successfully');
       const userObj = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        fullName: formData.fullName,
         email: formData.email,
         password: formData.password,
       };
@@ -74,56 +73,54 @@ const Signup = () => {
   };
 
   return (
-    <Container
+    <div className='login-container'
       style={{
         width: window.innerWidth,
         height: window.innerHeight,
-        backgroundImage: `url(${loginImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${signUpBackgroundImage})`,
         backgroundSize: 'cover',
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
+        padding:0
       }}
     >
-      <div
+      <div className='form-container'
         style={{
           backgroundColor: 'white',
-          flexDirection: 'column',
+          flexDirection: 'row',
           display: 'flex',
-          padding: '20px',
           rowGap: '10px',
           borderRadius: '10px',
+          height : '550px',
+          width : '1200px',
         }}
       >
+        <div>
+          <img src={backdropImage} alt='Login' className='login-image' 
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${signUpBackgroundImage})`,
+            backgroundSize: 'cover',
+          }}/>
+        </div>
+        <div className='loginDetailsCard'>
         <Typography variant='h5' gutterBottom>
           Sign Up
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
               <TextField
                 variant='outlined'
-                label='First Name'
-                name='firstName'
-                value={formData.firstName}
+                label='Full Name'
+                name='fullName'
+                value={formData.fullName}
                 onChange={handleChange}
                 fullWidth
                 required
-                error={Boolean(errors.firstName)}
-                helperText={errors.firstName}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                variant='outlined'
-                label='Last Name'
-                name='lastName'
-                value={formData.lastName}
-                onChange={handleChange}
-                fullWidth
-                required
-                error={Boolean(errors.lastName)}
-                helperText={errors.lastName}
+                error={Boolean(errors.fullName)}
+                helperText={errors.fullName}
+                style={{borderColor:'#c25700'}}
               />
             </Grid>
             <Grid item xs={12}>
@@ -200,16 +197,20 @@ const Signup = () => {
               <Button
                 type='submit'
                 variant='contained'
-                color='primary'
                 fullWidth
+                style={{backgroundColor:'#c25700',padding:'15px', textDecoration:'none'}}
               >
                 Sign Up
               </Button>
+              <Typography variant='body1' style={{display:'flex', justifyContent:'center',alignItems:'center',marginTop:20}}>
+                Have an account? <Link to='/login'  style={{ color: '#c25700' }}>  Login</Link>
+              </Typography>
             </Grid>
           </Grid>
         </form>
+        </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

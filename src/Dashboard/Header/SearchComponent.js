@@ -33,7 +33,8 @@ const SearchComponent = (props) => {
         backgroundColor: 'white',
         display: 'flex',
         alignItems: 'center',
-        padding: '20px',
+        paddingLeft:'10px',
+        paddingRight:'10px',
         height: '100px',
       }}
       className='shadow-style'

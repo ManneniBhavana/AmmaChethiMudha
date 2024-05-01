@@ -1,0 +1,28 @@
+.login-image {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 600px;
+    height: 550px;
+  }
+  .loginDetailsCard {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .loginDetailsCard form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .loginDetailsCard .MuiTextField-root {
+    width: 100%;
+  }
+  
+  .loginDetailsCard .MuiButton-root {
+    width: 100%; /* Set button to full width */
+    margin-top: 10px; 
+  }
