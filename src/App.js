@@ -24,6 +24,7 @@ import PulaosandbiryanisPage from './Dashboard/homemenus/pulaosandbiryanismenu';
 import SoupsPage from './Dashboard/homemenus/soupsmenu';
 import MainCoursePage from './Dashboard/homemenus/maincoursemenu';
 import SearchResultsPage from './Dashboard/searchresults/SearchResults';
+import EditProfile from './Dashboard/profile/EditProfile';
 
 const App = () => {
   return (
@@ -44,13 +45,10 @@ const App = () => {
             <Route path='/dessertsmenu' element={<DessertsPage />} />
             <Route path='/soupsmenu' element={<SoupsPage />} />
             <Route path='/maincoursemenu' element={<MainCoursePage />} />
-            <Route
-              path='/pulaosandbiryanismenu'
-              element={<PulaosandbiryanisPage />}
-            />
+            <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
             <Route path='/search' element={<SearchResultsPage />} />
+            <Route path = '/editprofile' element = {<EditProfile />}/>
           </Route>
-
           <Route path='/notfound' element={<EmptyComponent />} />
           <Route path='*' element={<Navigate to='/notfound' />} />
         </Routes>

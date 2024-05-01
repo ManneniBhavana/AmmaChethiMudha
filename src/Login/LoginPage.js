@@ -4,18 +4,24 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './LoginPage.css';
-import loginImage from '../images/home_background.jpeg';
+// import loginImage from '../images/logo.png';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import backdropImage from '../images/loginSignupImage.jpeg';
+import loginBackgrounImage from '../images/recipes_background.jpeg'
+
+const dummyFullName = 'Manneni Bhavana';
 const dummyEmail = 'manneni.bhavana@gmail.com';
 const dummyPassword = 'ManBha@123';
 
 const Login = () => {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   if (localStorage.getItem('user') !== null) {
     return window.location.replace('/home');
   }
+
   const validEmail = (val) =>
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       val
@@ -31,9 +37,11 @@ const Login = () => {
       toast.error('Enter Valid Email');
     } else if (!validPassword(password)) {
       toast.error('Enter Valid Password');
-    } else if (email === dummyEmail && password === dummyPassword) {
+    } else if (!fullName.trim()) {
+      toast.error('Enter Your Full Name');
+    } else if (email === dummyEmail && password === dummyPassword && fullName === dummyFullName) {
       toast.success('Login Success');
-      localStorage.setItem('user', JSON.stringify({ email, password }));
+      localStorage.setItem('user', JSON.stringify({ email, password , fullName}));
       window.location.replace('/home');
     } else {
       toast.error('Invalid Credentials');
@@ -46,7 +54,7 @@ const Login = () => {
       style={{
         width: window.innerWidth,
         height: window.innerHeight,
-        backgroundImage: `url(${loginImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${loginBackgrounImage})`,
         backgroundSize: 'cover',
         justifyContent: 'center',
         alignItems: 'center',
@@ -57,47 +65,64 @@ const Login = () => {
         className='form-container'
         style={{
           backgroundColor: 'white',
-          flexDirection: 'column',
+          flexDirection: 'row',
           display: 'flex',
-          padding: '20px',
           rowGap: '10px',
           borderRadius: '10px',
+          height : '550px',
+          width : '1200px',
         }}
       >
-        <Typography variant='h5' gutterBottom>
-          Login
-        </Typography>
-        <form
-          onSubmit={handleSubmit}
-          className='login-form'
+        <div>
+          <img src={backdropImage} alt='Login' className='login-image' 
           style={{
-            flexDirection: 'column',
-            rowGap: '10px',
-            display: 'flex',
-          }}
-        >
-          <TextField
-            label='Email'
-            variant='outlined'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <TextField
-            label='Password'
-            variant='outlined'
-            type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <Button type='submit' variant='contained' color='primary'>
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))`,
+            backgroundSize: 'cover',
+          }}/>
+        </div>
+        <div className='loginDetailsCard'>
+          <Typography variant='h5' gutterBottom style={{}}>
             Login
-          </Button>
-        </form>
-        <Typography variant='body1'>
-          Don't have an account? <Link to='/signup'>Create account</Link>
-        </Typography>
+          </Typography>
+          <form
+            onSubmit={handleSubmit}
+            className='login-form'
+            style={{
+              flexDirection: 'column',
+              rowGap: '10px',
+              display: 'flex',
+            }}
+          >
+            <TextField
+              label='Full Name'
+              variant='outlined'
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+            />
+            <TextField
+              label='Email'
+              variant='outlined'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <TextField
+              label='Password'
+              variant='outlined'
+              type='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <Button type='submit' variant='contained' style={{backgroundColor:'#c25700',padding:'15px'}}>
+              Login
+            </Button>
+          </form>
+          <Typography variant='body1' style={{display:'flex', justifyContent:'center',alignItems:'center',marginTop:20}}>
+            Don't have an account? <Link to='/signup'  style={{ color: '#c25700' }}>  Create account</Link>
+          </Typography>
+        </div>
       </div>
     </div>
   );

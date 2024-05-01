@@ -1,10 +1,14 @@
-.profile-form {
+   .profile-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px !important;
   }
   
+  .custom-textfield {
+    border-color: '#c25700';
+     color: '#000000';
+    margin-bottom: 10px;
+  }
   .custom-textfield .MuiOutlinedInput-notchedOutline {
     border-color: #c25700 !important;
   }
@@ -12,16 +16,33 @@
     color: #c25700 !important;
   }
   
-  .custom-save-button {
-    background-color: #c25700 !important;
-    color: white !important;
-    border-color: #c25700 !important;
-    height: 55px !important;
-    width: 150px !important;
-    margin-top: 30px !important;
+  .profile-card {
+    margin-bottom: 20px;
+    text-align: center;
+    height: 100px; /* Adjust the height as needed */
   }
   
-  .custom-save-button:hover {
-    background-color: #c25700  !important;
+  .profile-card-button {
+    margin-top: 10px;
   }
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  .profile-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logout-container {
+    margin-top: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+  }
+  
   

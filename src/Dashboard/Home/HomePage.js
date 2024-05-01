@@ -44,7 +44,7 @@ const Home = () => {
           title="Pulao's and Biryani's"
           content="A bad day...! Open this library."
           imageUrl={PulaosandBiryani}
-          onClick={() => handleCardClick("/pulaoandbiryani")} 
+          onClick={() => handleCardClick("/pulaosandbiryanismenu")} 
         />
       </div>
     </div>

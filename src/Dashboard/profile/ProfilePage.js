@@ -1,84 +1,53 @@
-import React, { useState } from 'react';
-import { TextField, Button, Container, Typography } from '@mui/material';
-import './ProfilePage.css';
+import React from "react";
+import { Button, Box } from "@mui/material";
+import CustomCard from "../reusablecards/HomeReusableCard";
+import desserts from '../../images/desserts.jpeg';
 
 const ProfilePage = () => {
-  // State variables for storing form data
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform form submission logic here
-    console.log('Submitted:', { firstName, lastName, email });
+  const handleProfile = () => {
+    console.log('profile clicked');
+    window.location.replace('/editprofile')
   };
 
-  const handleLogout = () => {
+const handleSavedRecipes = () => {
+    console.log('saved recipes clicked');
+  };
+
+const handleLogout = () => {
     localStorage.removeItem('user');
     window.location.replace('/login');
   };
 
   return (
-    <Container maxWidth='sm'>
-      <form onSubmit={handleSubmit} className='profile-form'>
-        <TextField
-          label='First Name'
-          variant='outlined'
-          fullWidth
-          margin='normal'
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className='custom-textfield'
-        />
-        <TextField
-          label='Last Name'
-          variant='outlined'
-          fullWidth
-          margin='normal'
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className='custom-textfield'
-        />
-        <TextField
-          label='Email'
-          variant='outlined'
-          fullWidth
-          margin='normal'
-          type='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className='custom-textfield'
-        />
-        <Button
-          type='submit'
-          variant='contained'
-          color='primary'
-          className='custom-save-button'
-        >
-          Edit
+    <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center', justifyContent: "center" , marginTop:50}}>
+      <CustomCard 
+        title="Edit Profile"
+        content="Edit your Profile information Here"
+        imageUrl={desserts}
+        height={150}
+        margin={15}
+        imageheight = {10}
+        width={1400}
+        onClick={handleProfile}
+      />
+      <CustomCard 
+        title="Saved Recipes"
+        content="View your Saved Recipes Here"
+        imageUrl={desserts}
+        height={150}
+        margin={15}
+        imageheight={10}
+        width = {1400}
+        onClick={handleSavedRecipes}
+      />
+      <Box>
+        <Button type="submit" variant="contained" className="custom-save-button" onClick={handleLogout} style={{ textDecoration: 'none' }}>
+          Logout
         </Button>
-        <Button
-          type='submit'
-          variant='contained'
-          color='primary'
-          className='custom-save-button'
-        >
-          Saved Recipes
-        </Button>
-        <Button
-          type='submit'
-          variant='contained'
-          color='primary'
-          className='custom-save-button'
-          onClick={handleLogout}
-        >
-          Log Out
-        </Button>
-      </form>
-    </Container>
+      </Box>
+    </div>
   );
 };
 
 export default ProfilePage;
+
