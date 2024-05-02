@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AmmaChethiMudha/static/css/main.c6a3be18.css",
-    "main.js": "/AmmaChethiMudha/static/js/main.9496ca52.js",
+    "main.js": "/AmmaChethiMudha/static/js/main.c73749e3.js",
     "static/js/453.a021e618.chunk.js": "/AmmaChethiMudha/static/js/453.a021e618.chunk.js",
     "static/media/dessertsmenubackground.jpeg": "/AmmaChethiMudha/static/media/dessertsmenubackground.a5ffdd2fcd829f814bb0.jpeg",
     "static/media/recipes_background.jpeg": "/AmmaChethiMudha/static/media/recipes_background.f6681c10853a92d4d747.jpeg",
@@ -70,11 +70,11 @@
     "static/media/profile-background.jpg": "/AmmaChethiMudha/static/media/profile-background.be80f6b1caf0e9bb679f.jpg",
     "index.html": "/AmmaChethiMudha/index.html",
     "main.c6a3be18.css.map": "/AmmaChethiMudha/static/css/main.c6a3be18.css.map",
-    "main.9496ca52.js.map": "/AmmaChethiMudha/static/js/main.9496ca52.js.map",
+    "main.c73749e3.js.map": "/AmmaChethiMudha/static/js/main.c73749e3.js.map",
     "453.a021e618.chunk.js.map": "/AmmaChethiMudha/static/js/453.a021e618.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6a3be18.css",
-    "static/js/main.9496ca52.js"
+    "static/js/main.c73749e3.js"
   ]
 }
