@@ -3,22 +3,20 @@ import { Button, Box } from '@mui/material';
 import CustomCard from '../reusablecards/HomeReusableCard';
 import profilebackgroundImage from '../../images/profileBackgroundImage.jpeg';
 import savedRecipes from '../../images/savedrecipesbackgroundImage.jpeg';
-import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
-  const navigate = useNavigate();
   const handleProfile = () => {
     console.log('profile clicked');
-    navigate('#/editprofile');
+    window.location.replace('#/editprofile');
   };
 
   const handleSavedRecipes = () => {
-    navigate('#/savedrecipes');
+    window.location.replace('#/savedrecipes');
   };
 
   const handleLogout = () => {
     localStorage.removeItem('user');
-    navigate('#/AmmaChethiMudha');
+    window.location.replace('#/AmmaChethiMudha');
   };
 
   return (

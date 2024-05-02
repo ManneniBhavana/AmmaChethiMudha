@@ -12,10 +12,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import backdropImage from '../images/loginSignupImage.jpeg';
 import signUpBackgroundImage from '../images/recipes_background.jpeg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -26,7 +25,7 @@ const Signup = () => {
   });
   const [errors, setErrors] = useState({});
   if (localStorage.getItem('user') !== null) {
-    return navigate('#/home');
+    return window.location.replace('#/home');
   }
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +67,7 @@ const Signup = () => {
         password: formData.password,
       };
       localStorage.setItem('user', JSON.stringify(userObj));
-      navigate('#/home');
+      window.location.replace('#/home');
     }
   };
 

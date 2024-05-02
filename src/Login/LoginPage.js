@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './LoginPage.css';
-// import loginImage from '../images/logo.png';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import backdropImage from '../images/loginSignupImage.jpeg';
@@ -18,14 +17,12 @@ const dummyEmail = 'manneni.bhavana@gmail.com';
 const dummyPassword = 'ManBha@123';
 
 const Login = () => {
-  const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   if (localStorage.getItem('user') !== null) {
-    return navigate('#/home')
-    // window.location.replace('#/home');
+    return window.location.replace('#/home');
   }
 
   const validEmail = (val) =>
@@ -58,7 +55,7 @@ const Login = () => {
         'user',
         JSON.stringify({ email, password, fullName })
       );
-      navigate('#/home');
+      window.location.replace('#/home');
     } else {
       toast.error('Invalid Credentials');
     }

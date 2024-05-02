@@ -4,16 +4,15 @@ import CloseIcon from '@mui/icons-material/Close';
 import { AiOutlineSearch } from 'react-icons/ai';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './HeaderPage.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 const SearchComponent = (props) => {
-  const navigate = useNavigate();
   const { setShowSearch, searchText = '' } = props;
   const [search, setSearch] = useState(searchText ?? '');
   const location = useLocation();
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && search.length >= 1) {
       if (location.pathname === '/search') {
-        navigate(`#/search?searchText=${search}`);
+        window.location.replace(`#/search?searchText=${search}`);
       } else {
         window.location.href = `#/search?searchText=${search}`;
       }
