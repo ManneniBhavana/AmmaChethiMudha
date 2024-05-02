@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Box } from "@mui/material";
 import CustomCard from "../reusablecards/HomeReusableCard";
-import desserts from '../../images/desserts.jpeg';
+import profilebackgroundImage from '../../images/profileBackgroundImage.jpeg';
+import savedRecipes from '../../images/savedrecipesbackgroundImage.jpeg'
 
 const ProfilePage = () => {
   const handleProfile = () => {
@@ -10,7 +11,7 @@ const ProfilePage = () => {
   };
 
 const handleSavedRecipes = () => {
-    console.log('saved recipes clicked');
+  window.location.replace('/savedrecipes');
   };
 
 const handleLogout = () => {
@@ -23,7 +24,7 @@ const handleLogout = () => {
       <CustomCard 
         title="Edit Profile"
         content="Edit your Profile information Here"
-        imageUrl={desserts}
+        imageUrl={profilebackgroundImage}
         height={150}
         margin={15}
         imageheight = {10}
@@ -33,7 +34,7 @@ const handleLogout = () => {
       <CustomCard 
         title="Saved Recipes"
         content="View your Saved Recipes Here"
-        imageUrl={desserts}
+        imageUrl={savedRecipes}
         height={150}
         margin={15}
         imageheight={10}

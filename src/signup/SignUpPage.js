@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Container,
   TextField,
   Button,
   Grid,
@@ -202,8 +201,8 @@ const Signup = () => {
               >
                 Sign Up
               </Button>
-              <Typography variant='body1' style={{display:'flex', justifyContent:'center',alignItems:'center',marginTop:20}}>
-                Have an account? <Link to='/login'  style={{ color: '#c25700' }}>  Login</Link>
+              <Typography variant='body1' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
+                Have an account? <Link to='/login' style={{ color: '#c25700' }}>  Login</Link>
               </Typography>
             </Grid>
           </Grid>
