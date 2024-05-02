@@ -5,11 +5,7 @@ import './index.css';
 const error =
   'https://res.cloudinary.com/dpnobkqmw/image/upload/v1634290874/erroring_1_q4upqy.png';
 
-const EmptyComponent = () => {
-  if (localStorage.getItem('user') === null) {
-    return <Navigate to='#/AmmaChethiMudha' />;
-  }
-
+const EmptyComponent = () => { 
   return (
     <>
       <div className='not-found'>

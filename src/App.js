@@ -26,6 +26,7 @@ import MainCoursePage from './Dashboard/homemenus/maincoursemenu';
 import SearchResultsPage from './Dashboard/searchresults/SearchResults';
 import EditProfile from './Dashboard/profile/EditProfile';
 import SavedRecipesPage from './Dashboard/recipes/SavedRecipespage';
+import { NotFound } from './Dashboard/emptyComponent/NotFound';
 
 const App = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
@@ -61,7 +62,7 @@ const App = () => {
           </Route>
 
           <Route path='/notfound' element={<EmptyComponent />} />
-          <Route path='*' element={<Navigate to='/notfound' />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
 
         <Footer />
