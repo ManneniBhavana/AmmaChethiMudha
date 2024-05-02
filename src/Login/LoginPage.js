@@ -98,6 +98,7 @@ const Login = () => {
               variant='outlined'
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
+              className='custom-textfield'
               required
             />
             <TextField
@@ -105,6 +106,7 @@ const Login = () => {
               variant='outlined'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className='custom-textfield'
               required
             />
             <TextField
@@ -113,9 +115,10 @@ const Login = () => {
               type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className='custom-textfield'
               required
             />
-            <Button type='submit' variant='contained' style={{backgroundColor:'#c25700',padding:'15px'}}>
+            <Button type='submit' variant='contained' style={{backgroundColor:'#c25700',padding:'15px', textTransform: 'none', fontSize: '16px' }}>
               Login
             </Button>
           </form>
