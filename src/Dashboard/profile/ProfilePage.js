@@ -5,15 +5,6 @@ import profilebackgroundImage from '../../images/profileBackgroundImage.jpeg';
 import savedRecipes from '../../images/savedrecipesbackgroundImage.jpeg';
 
 const ProfilePage = () => {
-  const handleProfile = () => {
-    console.log('profile clicked');
-    window.location.replace('#/editprofile');
-  };
-
-  const handleSavedRecipes = () => {
-    window.location.replace('#/savedrecipes');
-  };
-
   const handleLogout = () => {
     localStorage.removeItem('user');
     window.location.replace('#/AmmaChethiMudha');
@@ -37,7 +28,7 @@ const ProfilePage = () => {
         margin={15}
         imageheight={10}
         width={1400}
-        onClick={handleProfile}
+        linkTo='/editprofile'
       />
       <CustomCard
         title='Saved Recipes'
@@ -47,7 +38,7 @@ const ProfilePage = () => {
         margin={15}
         imageheight={10}
         width={1400}
-        onClick={handleSavedRecipes}
+        linkTo='/savedrecipes'
       />
       <Box>
         <Button
