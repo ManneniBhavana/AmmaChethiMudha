@@ -7,7 +7,6 @@ const EditProfile = () => {
   const [email, setEmail] = useState('');
 
   useEffect(() => {
-    // Fetch user details from localStorage
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       setFullName(user.fullName || '');
@@ -16,10 +15,7 @@ const EditProfile = () => {
   }, []);
 
   const handleBack = () => {
-    const confirmBack = window.confirm("Are you sure you want to go back? Any unsaved changes will be lost.");
-    if (confirmBack) {
       window.location.href = '/profile';
-    }
   };
 
   const handleSubmit = (e) => {
@@ -48,7 +44,7 @@ const EditProfile = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className='custom-textfield'
-            style={{ borderColor: '#c25700', color: '#000000' }} // Set border and text color
+            style={{ borderColor: '#c25700', color: '#000000' }}
         />
         <Box display="flex" justifyContent="center">
           <Button

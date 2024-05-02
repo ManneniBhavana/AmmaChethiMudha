@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -25,8 +25,10 @@ import SoupsPage from './Dashboard/homemenus/soupsmenu';
 import MainCoursePage from './Dashboard/homemenus/maincoursemenu';
 import SearchResultsPage from './Dashboard/searchresults/SearchResults';
 import EditProfile from './Dashboard/profile/EditProfile';
+import SavedRecipesPage from './Dashboard/recipes/SavedRecipespage';
 
 const App = () => {
+  const [savedRecipes, setSavedRecipes] = useState([]);
   return (
     <Router>
       <div className='content'>
@@ -48,7 +50,10 @@ const App = () => {
             <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
             <Route path='/search' element={<SearchResultsPage />} />
             <Route path = '/editprofile' element = {<EditProfile />}/>
+            <Route path="/recipedetails/:recipeId" element={<RecipeDetail />} />
+            <Route path="/savedrecipes" element={<SavedRecipesPage savedRecipes={savedRecipes} />} />
           </Route>
+          
           <Route path='/notfound' element={<EmptyComponent />} />
           <Route path='*' element={<Navigate to='/notfound' />} />
         </Routes>

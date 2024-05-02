@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import recipesData from '../../recipes.json';
 import { Typography, TextField, Button, Rating, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+// import BookmarkIcon from '@mui/icons-material/Bookmark';
 import './RecipeDetailPage.css';
 
-const RecipeDetail = () => {
+const RecipeDetail = (redirectToRecipes) => {
   const { recipeId } = useParams();
   const recipe = recipesData.find((recipe) => recipe.id === recipeId);
   const [userRating, setUserRating] = useState(null);
@@ -15,8 +17,9 @@ const RecipeDetail = () => {
   const [instructionsEditMode, setInstructionsEditMode] = useState(false);
   const [ingredientsChanged, setIngredientsChanged] = useState(false);
   const [instructionsChanged, setInstructionsChanged] = useState(false);
-  const disabledButton = userRating === null; // Define disabled state
-
+  const [bookmarked, setBookmarked] = useState(false);
+  const disabledButton = userRating === null;
+  const [savedRecipes, setSavedRecipes] = useState([]);
   const handleRatingChange = (event, newValue) => {
     setUserRating(newValue);
   };
@@ -61,6 +64,19 @@ const RecipeDetail = () => {
     setUserRating(null);
     setComments('');
   };
+
+  const handleBookmarkToggle = () => {
+    if (bookmarked) {
+      const updatedSavedRecipes = savedRecipes.filter((savedRecipe) => savedRecipe.id !== recipe.id);
+      setSavedRecipes(updatedSavedRecipes);
+    } else {
+      setSavedRecipes([...savedRecipes, recipe]);
+    }
+    setBookmarked(!bookmarked);
+    redirectToRecipes();
+  };
+  
+  
 
   if (!recipe) {
     return <div>Loading...</div>;
@@ -178,6 +194,9 @@ const RecipeDetail = () => {
           </Box>
         </Box>
       </Box>
+      {/* <IconButton onClick={handleBookmarkToggle}>
+        <BookmarkIcon color={bookmarked ? 'secondary' : 'action'} />
+      </IconButton> */}
     </Box>
   );
 };

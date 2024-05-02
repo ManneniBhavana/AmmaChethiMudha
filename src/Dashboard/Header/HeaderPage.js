@@ -22,7 +22,41 @@ import dessertsmenubackground from '../../images/dessertsmenubackground.jpeg';
 import soupsmenubackground from '../../images/soupsmenubackground.jpeg';
 import maincoursemenubackground from '../../images/maincoursemenubackground.jpeg';
 import pulaosandbiryanismenubackground from '../../images/pulaosandbiryanismenubackground.jpeg';
+import gulabjamunbackground from '../../images/gulabjamunbackgroundImage.jpeg';
+import paayasam from '../../images/paayasambackgroundimage.jpeg';
+import Bobbatlu from '../../images/bobbatlubackground.jpeg';
+import doublekameetha from '../../images/doublekameethaimage.jpeg';
+import vegetablesoup from '../../images/vegetablesoupbackgroundiamge.jpeg';
+import tomatosoup from '../../images/tomatosoupbackgroundImage.jpeg';
+import cornsoup from '../../images/cornsoupbackgroundimage.jpeg';
+import indianspicedlentilsoup from '../../images/indianspicedlentilsoup.jpeg';
+import chickenmanchow from '../../images/chickenmanchowsoup.jpeg';
+import chickenhotandsour from '../../images/chickenhotandsourbackgroundimage.jpeg';
+import chickenbambooshootssoup from '../../images/chickenbambooshoot.jpeg';
+import muttonpaya from '../../images/muttonpayabackground.jpeg';
+import mudhapappu from '../../images/mudhapappubackgroundimage.jpeg';
+import daltadka from '../../images/daltadka.jpeg';
+import paneerbhurji from '../../images/paneerbhurjibackgroundimage.jpeg';
+import guthivankaya from '../../images/guthivankayabackgroundimage.jpeg';
+import natukodipulusu from '../../images/natukodipulubackgroundimage.jpeg';
+import chickenfry from '../../images/chickenfrybackgroundimage.jpeg';
+import muttonkeema from '../../images/muttonkheemabackgroundimage.jpeg';
+import muttonpulusu from '../../images/muttonpulusubackgroundimage.jpeg'
+import paneerpulao from '../../images/paneerpulaobackgroundimage.jpeg'
+import vegetabledumbiryani from '../../images/vegetabledumbiryanibackgroundimage.jpeg'
+import paneerdumbiryani from '../../images/paneerdumbackgroundimage.jpeg'
+import hyderabadichickendumbiryani from '../../images/hyderabadichickedbmenubackground.jpeg'
+import chettinadchickenpulao from '../../images/chettinadchickenpulaobackgroundimage.jpeg'
+import muttonpulao from '../../images/muttonkheemapulaobackgroundimage.jpeg'
+import muttonkeemapulao from '../../images/muttonkheemapulaobackgroundimage.jpeg'
+import muttondumbiryani from '../../images/muttondumbiryanibackgroundimage.jpeg'
+import pinacolada from '../../images/pinacoladabackgroundimage.jpeg'
+import screwdriver from '../../images/screwdriverbackgroundimage.jpeg'
+import mangomojito from '../../images/mangomojitobackgroundimage.jpeg'
+import virginmojito from '../../images/virjinmojito.jpeg'
+import mushroompulao from '../../images/mushroompulaobackgroundimage.jpeg'
 import SearchComponent from './SearchComponent';
+import savedRecipe from '../../images/savedRecipes.jpeg'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -61,6 +95,10 @@ const Header = () => {
         title = 'PROFILE';
         bgImage = profilebackground;
         break;
+      case '/editprofile':
+        title = 'EDIT PROFILE';
+        bgImage = profilebackground;
+        break;
       case '/dessertsmenu':
         title = 'DESSERTS';
         bgImage = dessertsmenubackground;
@@ -76,6 +114,142 @@ const Header = () => {
       case '/pulaosandbiryanismenu':
         title = 'PULAOS AND BIRYANIS';
         bgImage = pulaosandbiryanismenubackground;
+        break;
+      case '/recipedetails/gulab-jamun':
+        title = 'GULAB JAMUN';
+        bgImage = gulabjamunbackground;
+        break;
+      case '/recipedetails/paayasam':
+        title = 'PAAYASAM';
+        bgImage = paayasam;
+        break;
+      case '/recipedetails/bobbatlu':
+        title = 'BOBBATLU';
+        bgImage = Bobbatlu;
+        break;
+      case '/recipedetails/double-ka-meetha':
+        title = 'DOUBLE KA MEETHA';
+        bgImage = doublekameetha; 
+        break;
+      case '/recipedetails/vegetable-soup':
+        title = 'VEGETABLE SOUP';
+        bgImage = vegetablesoup;
+        break;
+      case '/recipedetails/tomato-soup':
+        title = 'TOMATO SOUP';
+        bgImage = tomatosoup;
+        break;
+      case '/recipedetails/corn-soup':
+        title = 'CORN SOUP';
+        bgImage = cornsoup;
+        break;
+      case '/recipedetails/indian-spiced-lentil-soup':
+        title = 'INDIAN SPICED LENTIL SOUP';
+        bgImage = indianspicedlentilsoup;
+        break;
+      case '/recipedetails/chicken-manchow-soup':
+        title = 'CHICKEN MANCHOW SOUP';
+        bgImage = chickenmanchow;
+        break;
+      case '/recipedetails/chicken-hot-&-sour':
+        title = 'CHICKEN HOT & SOUR';
+        bgImage = chickenhotandsour;
+        break;
+      case '/recipedetails/chicken-bamboo-shoots-soup':
+        title = 'CHICKEN BAMBOO SHOOTS SOUP';
+        bgImage = chickenbambooshootssoup;
+        break;
+      case '/recipedetails/mutton-paya':
+        title = 'MUTTON PAYA';
+        bgImage = muttonpaya;
+        break;
+      case '/recipedetails/mudha-pappu':
+        title = 'MUDHA PAPPU';
+        bgImage = mudhapappu;
+        break;
+      case '/recipedetails/dal-tadka':
+        title = 'DAL TADKA';
+        bgImage = daltadka;
+        break;
+      case '/recipedetails/paneer-burji':
+        title = 'PANEER BURJI';
+        bgImage = paneerbhurji;
+        break;
+      case '/recipedetails/guthi-vankaya':
+        title = 'GUTHI VANKAYA';
+        bgImage = guthivankaya;
+        break;
+      case '/recipedetails/natukodi-pulusu':
+        title = 'NATUKODI PULUSU';
+        bgImage = natukodipulusu;
+        break;
+      case '/recipedetails/chicken-fry':
+        title = 'CHICKEN FRY';
+        bgImage = chickenfry;
+        break;
+      case '/recipedetails/mutton-keema':
+        title = 'MUTTON KEEMA';
+        bgImage = muttonkeema;
+        break;
+      case '/recipedetails/mutton-pulusu':
+        title = 'MUTTON PULUSU';
+        bgImage = muttonpulusu;
+        break;
+      case '/recipedetails/mushroom-pulao':
+        title = 'MUSHROOM PULAO';
+        bgImage = mushroompulao;
+        break;
+      case '/recipedetails/paneer-pulao':
+        title = 'PANEER PULAO';
+        bgImage = paneerpulao;
+        break;
+      case '/recipedetails/vegetable-dum-biryani':
+        title = 'VEGETABLE DUM BIRYANI';
+        bgImage = vegetabledumbiryani;
+        break;
+      case '/recipedetails/paneer-dum-biryani':
+        title = 'PANEER DUM BIRYANI';
+        bgImage = paneerdumbiryani;
+        break;
+      case '/recipedetails/hyderabad-chicken-dum-biryani':
+        title = 'HYDERABADI CHICKEN DUM BIRYANI';
+        bgImage = hyderabadichickendumbiryani;
+        break;
+      case '/recipedetails/chettinad-chicken-pulao':
+        title = 'CHETTINAD CHICKEN PULAO';
+        bgImage = chettinadchickenpulao;
+        break;
+      case '/recipedetails/spicy-mutton-pulao':
+        title = 'SPICY MUTTON PULAO';
+        bgImage = muttonpulao;
+        break;
+      case '/recipedetails/mutton-keema-pulao':
+        title = 'MUTTON KEEMA PULAO';
+        bgImage = muttonkeemapulao;
+        break;
+      case '/recipedetails/mutton-dum-biryani':
+        title = 'MUTTON DUM BIRYANI';
+        bgImage = muttondumbiryani;
+        break;
+      case '/recipedetails/pina-colada':
+        title = 'PINA COLADA';
+        bgImage = pinacolada;
+        break;
+      case '/recipedetails/screw-driver':
+        title = 'SCREW DRIVER';
+        bgImage = screwdriver;
+        break;
+      case '/recipedetails/mango-mojito':
+        title = 'MANGO MOJITO';
+        bgImage = mangomojito;
+        break;
+      case '/recipedetails/virgin-mojito':
+        title = 'VIRGIN MOJITO';
+        bgImage = virginmojito;
+        break;
+      case '/savedrecipes':
+        title = 'SAVED RECIPES';
+        bgImage = savedRecipe;
         break;
       default:
         break;
@@ -210,7 +384,6 @@ const Header = () => {
             }}
           >
             {full && <div>{renderFullList()}</div>}
-            {/* Search Icon */}
 
             <IconButton
               color='white'
