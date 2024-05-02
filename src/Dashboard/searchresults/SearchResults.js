@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchComponent from '../Header/SearchComponent';
 import recipeData from '../../recipes.json';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const dummyResult = {
   name: 'Recipes',
@@ -11,7 +11,7 @@ const dummyResult = {
 };
 
 const SearchResultsPage = () => {
-  const searchParams = new URLSearchParams(window.location.search);
+  const [searchParams] = useSearchParams();
   const [searchResults, setSearchResults] = useState([]);
   const searchText = searchParams.get('searchText');
   const performSearch = () => {

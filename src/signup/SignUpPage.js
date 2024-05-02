@@ -11,10 +11,11 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import backdropImage from '../images/loginSignupImage.jpeg';
-import signUpBackgroundImage from '../images/recipes_background.jpeg'
-import { Link } from 'react-router-dom';
+import signUpBackgroundImage from '../images/recipes_background.jpeg';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -25,7 +26,7 @@ const Signup = () => {
   });
   const [errors, setErrors] = useState({});
   if (localStorage.getItem('user') !== null) {
-    return window.location.replace('/home');
+    return navigate('#/home');
   }
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,12 +68,13 @@ const Signup = () => {
         password: formData.password,
       };
       localStorage.setItem('user', JSON.stringify(userObj));
-      window.location.replace('/home');
+      navigate('#/home');
     }
   };
 
   return (
-    <div className='login-container'
+    <div
+      className='login-container'
       style={{
         width: window.innerWidth,
         height: window.innerHeight,
@@ -81,136 +83,158 @@ const Signup = () => {
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
-        padding:0
+        padding: 0,
       }}
     >
-      <div className='form-container'
+      <div
+        className='form-container'
         style={{
           backgroundColor: 'white',
           flexDirection: 'row',
           display: 'flex',
           rowGap: '10px',
           borderRadius: '10px',
-          height : '550px',
-          width : '1200px',
+          height: '550px',
+          width: '1200px',
         }}
       >
         <div>
-          <img src={backdropImage} alt='Login' className='login-image' 
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${signUpBackgroundImage})`,
-            backgroundSize: 'cover',
-          }}/>
+          <img
+            src={backdropImage}
+            alt='Login'
+            className='login-image'
+            style={{
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${signUpBackgroundImage})`,
+              backgroundSize: 'cover',
+            }}
+          />
         </div>
         <div className='loginDetailsCard'>
-        <Typography variant='h5' gutterBottom>
-          Sign Up
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                label='Full Name'
-                name='fullName'
-                value={formData.fullName}
-                onChange={handleChange}
-                fullWidth
-                required
-                error={Boolean(errors.fullName)}
-                helperText={errors.fullName}
-                style={{borderColor:'#c25700'}}
-                className='custom-textfield'
-              />
+          <Typography variant='h5' gutterBottom>
+            Sign Up
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  variant='outlined'
+                  label='Full Name'
+                  name='fullName'
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                  error={Boolean(errors.fullName)}
+                  helperText={errors.fullName}
+                  style={{ borderColor: '#c25700' }}
+                  className='custom-textfield'
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant='outlined'
+                  label='Email'
+                  type='email'
+                  name='email'
+                  value={formData.email}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                  error={Boolean(errors.email)}
+                  helperText={errors.email}
+                  className='custom-textfield'
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant='outlined'
+                  label='Password'
+                  type={formData.showPassword ? 'text' : 'password'}
+                  name='password'
+                  value={formData.password}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                  className='custom-textfield'
+                  error={Boolean(errors.password)}
+                  helperText={errors.password}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position='end'>
+                        <IconButton onClick={handleTogglePasswordVisibility}>
+                          {formData.showPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant='outlined'
+                  label='Confirm Password'
+                  type={formData.showConfirmPassword ? 'text' : 'password'}
+                  name='confirmPassword'
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  fullWidth
+                  required
+                  className='custom-textfield'
+                  error={Boolean(errors.confirmPassword)}
+                  helperText={errors.confirmPassword}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position='end'>
+                        <IconButton
+                          onClick={handleToggleConfirmPasswordVisibility}
+                        >
+                          {formData.showConfirmPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type='submit'
+                  variant='contained'
+                  fullWidth
+                  style={{
+                    backgroundColor: '#c25700',
+                    padding: '15px',
+                    textTransform: 'none',
+                    fontSize: '16px',
+                  }}
+                >
+                  Sign Up
+                </Button>
+                <Typography
+                  variant='body1'
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: 20,
+                  }}
+                >
+                  Have an account?{' '}
+                  <Link to='/AmmaChethiMudha' style={{ color: '#c25700' }}>
+                    {' '}
+                    Login
+                  </Link>
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                label='Email'
-                type='email'
-                name='email'
-                value={formData.email}
-                onChange={handleChange}
-                fullWidth
-                required
-                error={Boolean(errors.email)}
-                helperText={errors.email}
-                className='custom-textfield'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                label='Password'
-                type={formData.showPassword ? 'text' : 'password'}
-                name='password'
-                value={formData.password}
-                onChange={handleChange}
-                fullWidth
-                required
-                className='custom-textfield'
-                error={Boolean(errors.password)}
-                helperText={errors.password}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <IconButton onClick={handleTogglePasswordVisibility}>
-                        {formData.showPassword ? (
-                          <VisibilityOff />
-                        ) : (
-                          <Visibility />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                label='Confirm Password'
-                type={formData.showConfirmPassword ? 'text' : 'password'}
-                name='confirmPassword'
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                fullWidth
-                required
-                className='custom-textfield'
-                error={Boolean(errors.confirmPassword)}
-                helperText={errors.confirmPassword}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <IconButton
-                        onClick={handleToggleConfirmPasswordVisibility}
-                      >
-                        {formData.showConfirmPassword ? (
-                          <VisibilityOff />
-                        ) : (
-                          <Visibility />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type='submit'
-                variant='contained'
-                fullWidth
-                style={{backgroundColor:'#c25700',padding:'15px', textTransform:'none',  fontSize: '16px'}}
-              >
-                Sign Up
-              </Button>
-              <Typography variant='body1' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-                Have an account? <Link to='/AmmaChethiMudha' style={{ color: '#c25700' }}>  Login</Link>
-              </Typography>
-            </Grid>
-          </Grid>
-        </form>
+          </form>
         </div>
       </div>
     </div>

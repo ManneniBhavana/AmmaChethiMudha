@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, Container, TextField, Box } from "@mui/material";
+import React, { useState, useEffect } from 'react';
+import { Button, Container, TextField, Box } from '@mui/material';
 import './ProfilePage.css';
 
 const EditProfile = () => {
@@ -15,7 +15,7 @@ const EditProfile = () => {
   }, []);
 
   const handleBack = () => {
-      window.location.href = '/profile';
+    window.location.href = '#/profile';
   };
 
   const handleSubmit = (e) => {
@@ -25,32 +25,36 @@ const EditProfile = () => {
 
   return (
     <Container maxWidth='sm'>
-      <form onSubmit={handleSubmit} className='profile-form' style={{marginTop: 30}}>
+      <form
+        onSubmit={handleSubmit}
+        className='profile-form'
+        style={{ marginTop: 30 }}
+      >
         <TextField
-            label='Full Name'
-            variant='outlined'
-            fullWidth
-            margin='normal'
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            className='custom-textfield'
+          label='Full Name'
+          variant='outlined'
+          fullWidth
+          margin='normal'
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          className='custom-textfield'
         />
         <TextField
-            label='Email'
-            variant='outlined'
-            fullWidth
-            margin='normal'
-            type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className='custom-textfield'
-            style={{ borderColor: '#c25700', color: '#000000' }}
+          label='Email'
+          variant='outlined'
+          fullWidth
+          margin='normal'
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className='custom-textfield'
+          style={{ borderColor: '#c25700', color: '#000000' }}
         />
-        <Box display="flex" justifyContent="center">
+        <Box display='flex' justifyContent='center'>
           <Button
-            type="button"
-            variant="contained"
-            className="custom-save-button"
+            type='button'
+            variant='contained'
+            className='custom-save-button'
             onClick={() => handleBack('/editprofile')}
           >
             Back

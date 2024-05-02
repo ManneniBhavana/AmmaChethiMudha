@@ -9,6 +9,7 @@ import './RecipeDetailPage.css';
 const RecipeDetail = (redirectToRecipes) => {
   const { recipeId } = useParams();
   const recipe = recipesData.find((recipe) => recipe.id === recipeId);
+  const [recipeData, setRecipeData] = useState(null);
   const [userRating, setUserRating] = useState(null);
   const [comments, setComments] = useState('');
   const [editedIngredients, setEditedIngredients] = useState('');
@@ -39,11 +40,17 @@ const RecipeDetail = (redirectToRecipes) => {
   };
 
   const handleIngredientsSave = () => {
+    const updatedIngredients = editedIngredients.split('\n');
+    const updatedRecipe = { ...recipeData, ingredients: updatedIngredients };
+    setRecipeData(updatedRecipe);
     setIngredientsChanged(false);
     setIngredientsEditMode(false);
   };
 
   const handleInstructionsSave = () => {
+    const updatedInstructions = editedInstructions.split('\n');
+    const updatedRecipe = { ...recipeData, instructions: updatedInstructions };
+    setRecipeData(updatedRecipe);
     setInstructionsChanged(false);
     setInstructionsEditMode(false);
   };
@@ -99,7 +106,7 @@ const RecipeDetail = (redirectToRecipes) => {
           fullWidth
         />
       ) : (
-        <Typography variant="body1" className="textView"  sx={{ border: '1px solid grey', borderRadius: 1, padding: '8px', marginBottom: '8px'}}>
+        <Typography variant="body1" className="textView">
           {recipe.ingredients.map((ingredient, index) => (
             <React.Fragment key={index}>
               {ingredient}
@@ -120,7 +127,6 @@ const RecipeDetail = (redirectToRecipes) => {
       )}
       </Box>
       <Typography variant="h4" className='headings' style={{marginBottom:'8px'}}>INSTRUCTIONS</Typography>
-      
       {instructionsEditMode ? (
         <TextField
           value={editedInstructions}
@@ -131,7 +137,7 @@ const RecipeDetail = (redirectToRecipes) => {
           fullWidth
         />
       ) : (
-        <Typography variant="body1" className="textView"  sx={{ border: '1px solid grey', borderRadius: 1, padding: '8px', marginBottom: '8px'}}>
+        <Typography variant="body1" className="textView">
           {recipe.instructions.map((instruction, index) => (
             <React.Fragment key={index}>
               {instruction}
@@ -141,15 +147,15 @@ const RecipeDetail = (redirectToRecipes) => {
         </Typography>
       )}
       <Box display='flex' justifyContent='flex-end'>
-        {instructionsEditMode ? (
-          <Button onClick={handleInstructionsSave} variant="contained" color="primary" mt={2} className='custom-save-button'>
-            Save
-          </Button>
-        ) : (
-          <Button onClick={handleInstructionsEdit} variant="contained" color="primary" mt={2} className='custom-save-button'>
-            Edit
-          </Button>
-        )}
+      {instructionsEditMode ? (
+        <Button onClick={handleInstructionsSave} variant="contained" color="primary" mt={2} className='custom-save-button'>
+          Save
+        </Button>
+      ) : (
+        <Button onClick={handleInstructionsEdit} variant="contained" color="primary" mt={2} className='custom-save-button'>
+          Edit
+        </Button>
+      )}
       </Box>
       <Typography variant="h6" className='headings'>VIDEO</Typography>
       <Box mt={4} display="flex" flexDirection="column" alignItems="center">
