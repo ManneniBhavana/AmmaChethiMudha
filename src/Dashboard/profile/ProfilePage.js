@@ -16,7 +16,7 @@ const handleSavedRecipes = () => {
 
 const handleLogout = () => {
     localStorage.removeItem('user');
-    window.location.replace('/login');
+    window.location.replace('/AmmaChethiMudha');
   };
 
   return (

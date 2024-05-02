@@ -206,7 +206,7 @@ const Signup = () => {
                 Sign Up
               </Button>
               <Typography variant='body1' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
-                Have an account? <Link to='/login' style={{ color: '#c25700' }}>  Login</Link>
+                Have an account? <Link to='/AmmaChethiMudha' style={{ color: '#c25700' }}>  Login</Link>
               </Typography>
             </Grid>
           </Grid>

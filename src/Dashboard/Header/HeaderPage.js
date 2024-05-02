@@ -63,7 +63,7 @@ const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const location = useLocation();
   const hideHeader =
-    location.pathname === '/login' ||
+    location.pathname === '/AmmaChethiMudha' ||
     location.pathname === '/signup' ||
     location.pathname === '/search';
 
