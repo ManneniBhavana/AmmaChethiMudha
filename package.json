@@ -29,6 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nodemon": "nodemon react-scripts start",
+    "predeploy":"npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

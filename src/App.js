@@ -6,15 +6,15 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Header from './Dashboard/Header/HeaderPage';
-import Home from './Dashboard/home/HomePage';
+import Home from './Dashboard/Home/HomePage';
 import Insights from './Dashboard/insights/InsightsPage';
 import Recipes from './Dashboard/recipes/RecipePage';
 import AboutUs from './Dashboard/aboutus/AboutUsPage';
 import Profile from './Dashboard/profile/ProfilePage';
-import Footer from './Dashboard/footer/FooterPage';
+import Footer from './Dashboard/Footer/FooterPage';
 import './App.css';
 import Signup from './signup/SignUpPage';
-import Login from './login/LoginPage';
+import Login from './Login/LoginPage';
 import { ToastContainer } from 'react-toastify';
 import ProtectedRoute from './ProtectedRoute';
 import EmptyComponent from './Dashboard/emptyComponent/EmptyComponent';
@@ -47,13 +47,19 @@ const App = () => {
             <Route path='/dessertsmenu' element={<DessertsPage />} />
             <Route path='/soupsmenu' element={<SoupsPage />} />
             <Route path='/maincoursemenu' element={<MainCoursePage />} />
-            <Route path='/pulaosandbiryanismenu' element={<PulaosandbiryanisPage />} />
+            <Route
+              path='/pulaosandbiryanismenu'
+              element={<PulaosandbiryanisPage />}
+            />
             <Route path='/search' element={<SearchResultsPage />} />
-            <Route path = '/editprofile' element = {<EditProfile />}/>
-            <Route path="/recipedetails/:recipeId" element={<RecipeDetail />} />
-            <Route path="/savedrecipes" element={<SavedRecipesPage savedRecipes={savedRecipes} />} />
+            <Route path='/editprofile' element={<EditProfile />} />
+            <Route path='/recipedetails/:recipeId' element={<RecipeDetail />} />
+            <Route
+              path='/savedrecipes'
+              element={<SavedRecipesPage savedRecipes={savedRecipes} />}
+            />
           </Route>
-          
+
           <Route path='/notfound' element={<EmptyComponent />} />
           <Route path='*' element={<Navigate to='/notfound' />} />
         </Routes>

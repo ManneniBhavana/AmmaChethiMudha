@@ -5,7 +5,6 @@ import {
   Grid,
   IconButton,
   InputAdornment,
-  Link
 } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -13,6 +12,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import backdropImage from '../images/loginSignupImage.jpeg';
 import signUpBackgroundImage from '../images/recipes_background.jpeg'
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
