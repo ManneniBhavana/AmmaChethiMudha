@@ -120,6 +120,7 @@ const Signup = () => {
                 error={Boolean(errors.fullName)}
                 helperText={errors.fullName}
                 style={{borderColor:'#c25700'}}
+                className='custom-textfield'
               />
             </Grid>
             <Grid item xs={12}>
@@ -134,6 +135,7 @@ const Signup = () => {
                 required
                 error={Boolean(errors.email)}
                 helperText={errors.email}
+                className='custom-textfield'
               />
             </Grid>
             <Grid item xs={12}>
@@ -146,6 +148,7 @@ const Signup = () => {
                 onChange={handleChange}
                 fullWidth
                 required
+                className='custom-textfield'
                 error={Boolean(errors.password)}
                 helperText={errors.password}
                 InputProps={{
@@ -173,6 +176,7 @@ const Signup = () => {
                 onChange={handleChange}
                 fullWidth
                 required
+                className='custom-textfield'
                 error={Boolean(errors.confirmPassword)}
                 helperText={errors.confirmPassword}
                 InputProps={{
@@ -197,7 +201,7 @@ const Signup = () => {
                 type='submit'
                 variant='contained'
                 fullWidth
-                style={{backgroundColor:'#c25700',padding:'15px', textDecoration:'none'}}
+                style={{backgroundColor:'#c25700',padding:'15px', textTransform:'none',  fontSize: '16px'}}
               >
                 Sign Up
               </Button>
