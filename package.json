@@ -2,7 +2,6 @@
   "name": "ammachethimudha",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mannenibhavana.github.io/AmmaChethiMudha/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/style": "^0.8.0",
