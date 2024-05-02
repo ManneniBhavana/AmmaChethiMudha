@@ -38,13 +38,13 @@ const Home = () => {
           title='Main Course'
           content='A library of mouth watering main course dishes.'
           imageUrl={MainCourse}
-          linkTo='maincoursemenu'
+          linkTo='/maincoursemenu'
         />
         <CustomCard
           title="Pulao's and Biryani's"
           content='A bad day...! Open this library.'
           imageUrl={PulaosandBiryani}
-          linkTo='pulaosandbiryanismenu'
+          linkTo='/pulaosandbiryanismenu'
         />
       </div>
     </div>
